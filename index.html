@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lumen English — онлайн-курс английского, который работает</title>
+<meta name="description" content="Говорите по-английски уверенно за 6 месяцев. Живые уроки, личный наставник, гарантия результата.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F2EA;--fg:#111114;--muted:#6b6a70;--card:#fff;--line:#e3ddd0;--acc:#D6FF3D;--vio:#6C4DFF;--ink:#111114;--onink:#F6F2EA;
+--h:'Unbounded','Arial Black',system-ui,sans-serif;--b:'Manrope',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c0c0f;--fg:#f2eee6;--muted:#9a98a2;--card:#17171c;--line:#2a2a31;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0c0f;--fg:#f2eee6;--muted:#9a98a2;--card:#17171c;--line:#2a2a31;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--b);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+img,svg{max-width:100%}a{color:inherit}
+.w{width:min(1180px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--h);font-weight:700;line-height:1.08;letter-spacing:-.03em;margin:0}
+h2{font-size:clamp(28px,5vw,54px)}h3{font-size:19px;letter-spacing:-.02em}
+.tag{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:700;padding:7px 14px;border:1px solid var(--line);border-radius:99px;background:var(--card)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--vio);box-shadow:0 0 0 4px #6c4dff33}
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 15px var(--b);padding:16px 26px;border-radius:99px;border:0;cursor:pointer;text-decoration:none;background:var(--ink);color:var(--onink);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px #0003}
+.btn.acc{background:var(--acc);color:#111}.btn.ghost{background:transparent;color:var(--fg);border:1.5px solid var(--fg)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font:700 20px var(--h);text-decoration:none;display:flex;gap:8px;align-items:center}
+.logo i{width:26px;height:26px;border-radius:50% 50% 50% 8px;background:var(--acc);border:2px solid var(--ink);display:inline-block}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--fg)}
+.nav .btn{padding:11px 20px;font-size:14px}
+@media(max-width:820px){nav ul{display:none}}
+.hero{padding:64px 0 40px;position:relative}
+.hero h1{font-size:clamp(38px,8.4vw,112px);margin:22px 0}
+.hero h1 em{font-style:normal;background:var(--acc);color:#111;padding:0 .12em;border-radius:.16em;display:inline-block;transform:rotate(-2deg)}
+.hero p.lead{font-size:clamp(17px,2.2vw,21px);max-width:560px;color:var(--muted);margin:0 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.hg{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:end}
+@media(max-width:900px){.hg{grid-template-columns:1fr}}
+.chat{background:var(--ink);color:var(--onink);border-radius:28px;padding:22px;display:grid;gap:12px;transform:rotate(2deg);box-shadow:0 30px 60px -20px #0006}
+.msg{padding:12px 16px;border-radius:18px;font-size:15px;max-width:88%;animation:pop .6s both}
+.msg.a{background:#26262d;border-bottom-left-radius:4px}.msg.b{background:var(--acc);color:#111;margin-left:auto;border-bottom-right-radius:4px}
+.msg small{display:block;opacity:.6;font-size:12px;margin-top:3px}
+.msg:nth-child(2){animation-delay:.4s}.msg:nth-child(3){animation-delay:.9s}.msg:nth-child(4){animation-delay:1.4s}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.96)}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:24px;overflow:hidden;margin-top:56px}
+.stats div{background:var(--card);padding:26px 22px}
+.stats b{font:700 clamp(28px,4vw,44px) var(--h);letter-spacing:-.03em;display:block}.stats span{color:var(--muted);font-size:14px}
+@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}}
+.mq{overflow:hidden;background:var(--ink);color:var(--onink);padding:18px 0;margin:70px 0;transform:rotate(-1.2deg);width:104%;margin-left:-2%}
+.mq div{display:flex;gap:44px;white-space:nowrap;width:max-content;animation:mq 28s linear infinite;font:500 clamp(20px,3vw,32px) var(--h)}
+.mq span:nth-child(even){color:var(--acc)}@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:80px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:44px}
+.sh p{max-width:380px;color:var(--muted);margin:0}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.c{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:28px;position:relative;overflow:hidden;transition:transform .3s}
+.c:hover{transform:translateY(-4px)}.c p{color:var(--muted);margin:10px 0 0;font-size:15px}
+.c .n{font:700 13px var(--h);color:var(--vio);margin-bottom:34px;display:block}
+.s2{grid-column:span 2}.s3{grid-column:span 3}.s4{grid-column:span 4}
+.c.d{background:var(--ink);color:var(--onink);border-color:var(--ink)}.c.d p{color:#b9b6bf}.c.d .n{color:var(--acc)}
+.c.v{background:var(--vio);color:#fff;border-color:var(--vio)}.c.v p,.c.v .n{color:#e4defe}
+.c.a{background:var(--acc);color:#111;border-color:var(--acc)}.c.a p,.c.a .n{color:#2b3300}
+.big{font:700 clamp(46px,7vw,84px) var(--h);letter-spacing:-.04em;line-height:1}
+@media(max-width:860px){.bento{grid-template-columns:1fr 1fr}.s2,.s3,.s4{grid-column:span 2}}
+.lv{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.lv button{font:700 15px var(--b);padding:12px 22px;border-radius:99px;border:1.5px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+.lv button[aria-selected="true"]{background:var(--ink);color:var(--onink);border-color:var(--ink)}
+.lp{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;background:var(--card);border:1px solid var(--line);border-radius:32px;padding:clamp(22px,4vw,44px)}
+@media(max-width:820px){.lp{grid-template-columns:1fr}}
+.lp ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.lp li{padding:14px 18px;border-radius:16px;background:var(--bg);display:flex;gap:12px;align-items:center;font-weight:500}
+.lp li::before{content:"✓";width:24px;height:24px;border-radius:50%;background:var(--acc);color:#111;display:grid;place-items:center;font-size:13px;flex:none}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.steps .c::after{counter-increment:s;content:"0" counter(s);position:absolute;right:20px;top:14px;font:700 54px var(--h);color:var(--line)}
+@media(max-width:860px){.steps{grid-template-columns:1fr 1fr}}@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.quiz{background:var(--ink);color:var(--onink);border-radius:36px;padding:clamp(26px,5vw,60px);display:grid;grid-template-columns:1fr 1fr;gap:36px}
+@media(max-width:820px){.quiz{grid-template-columns:1fr}}
+.quiz p{color:#b9b6bf}.opt{display:grid;gap:10px;margin-top:16px}
+.opt button{font:500 16px var(--b);text-align:left;padding:15px 18px;border-radius:16px;border:1.5px solid #34343c;background:#1b1b21;color:var(--onink);cursor:pointer;transition:.2s}
+.opt button:hover{border-color:var(--acc)}
+.bar{height:6px;background:#2d2d35;border-radius:9px;overflow:hidden;margin-bottom:22px}.bar i{display:block;height:100%;background:var(--acc);width:0;transition:width .4s}
+.res b{font:700 64px var(--h);color:var(--acc);display:block;line-height:1}
+.rv{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:860px){.rv{grid-template-columns:1fr}}
+.av{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font:700 16px var(--h);color:#111;flex:none}
+.who{display:flex;gap:12px;align-items:center;margin-top:22px}.who small{color:var(--muted);display:block}
+.pr{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+@media(max-width:900px){.pr{grid-template-columns:1fr}}
+.pr .c{display:flex;flex-direction:column}.pr ul{list-style:none;padding:0;margin:20px 0 28px;display:grid;gap:10px;font-size:15px;flex:1}
+.pr li::before{content:"→ ";color:var(--vio);font-weight:700}.c.d li::before{color:var(--acc)}
+.price{font:700 40px var(--h);letter-spacing:-.04em;margin-top:14px}.price small{font:500 14px var(--b);color:var(--muted);letter-spacing:0}
+.pop{position:absolute;top:18px;right:18px;background:var(--acc);color:#111;font:700 12px var(--b);padding:6px 12px;border-radius:99px}
+details{border-bottom:1px solid var(--line);padding:22px 0}summary{cursor:pointer;font:700 clamp(17px,2.4vw,22px) var(--h);letter-spacing:-.02em;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";font-size:28px;line-height:1;transition:.3s}details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);max-width:720px;margin:14px 0 0}
+.form{background:var(--acc);color:#111;border-radius:40px;padding:clamp(28px,6vw,72px);display:grid;grid-template-columns:1fr 1fr;gap:36px}
+@media(max-width:820px){.form{grid-template-columns:1fr}}
+.form form{display:grid;gap:12px}
+.form input,.form select{font:500 16px var(--b);padding:16px 18px;border-radius:16px;border:2px solid transparent;background:#fff;color:#111;width:100%}
+.form input:focus,.form select:focus{outline:0;border-color:#111}
+.form .btn{justify-content:center;width:100%}.ok{display:none;font:700 22px var(--h);padding:30px 0}
+footer{padding:50px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.fg{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.rev{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}.rev.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><div class="w nav">
+<a class="logo" href="#top"><i></i>Lumen</a>
+<nav><ul><li><a href="#why">Метод</a></li><li><a href="#program">Программа</a></li><li><a href="#test">Тест</a></li><li><a href="#reviews">Отзывы</a></li><li><a href="#price">Тарифы</a></li></ul></nav>
+<a class="btn acc" href="#join">Записаться</a></div></header>
+
+<main id="top">
+<div class="w hero">
+<span class="tag"><span class="dot"></span>Новый поток стартует 9 ноября</span>
+<div class="hg"><div>
+<h1>Заговорите на английском <em>по-настоящему</em></h1>
+<p class="lead">Живые уроки с наставником, разговорная практика с первой недели и чёткий план на 6 месяцев. Без зубрёжки и скучных учебников.</p>
+<div class="cta"><a class="btn" href="#test">Узнать свой уровень →</a><a class="btn ghost" href="#program">Смотреть программу</a></div></div>
+<div class="chat" aria-hidden="true">
+<div class="msg a">Hi! How was your weekend?<small>Анна, наставник</small></div>
+<div class="msg b">It was great! I finally speak without fear 🙌</div>
+<div class="msg a">That’s the spirit! Let’s try a harder one…<small>Анна, наставник</small></div>
+<div class="msg b">Bring it on!</div></div></div>
+<div class="stats"><div><b>12 400</b><span>выпускников курса</span></div><div><b>4,9</b><span>средняя оценка уроков</span></div><div><b>+2</b><span>уровня за 6 месяцев</span></div><div><b>92%</b><span>доходят до конца</span></div></div>
+</div>
+
+<div class="mq" aria-hidden="true"><div><span>Speak</span><span>Listen</span><span>Think</span><span>Dream</span><span>Speak</span><span>Listen</span><span>Think</span><span>Dream</span><span>Speak</span><span>Listen</span><span>Think</span><span>Dream</span><span>Speak</span><span>Listen</span><span>Think</span><span>Dream</span></div></div>
+
+<section id="why"><div class="w">
+<div class="sh rev"><h2>Не как в школе.<br>Как в жизни.</h2><p>Мы убрали всё, что не помогает говорить, и оставили то, что работает.</p></div>
+<div class="bento rev">
+<div class="c d s4"><span class="n">01 / Практика</span><h3>70% урока — говорите вы</h3><p>Преподаватель не читает лекции. Вы обсуждаете реальные темы: работа, путешествия, фильмы, собеседования — и получаете разбор ошибок сразу.</p></div>
+<div class="c a s2"><span class="n">02 / Старт</span><div class="big">7 дней</div><p>и первый диалог на английском</p></div>
+<div class="c s2"><span class="n">03 / Группы</span><h3>До 6 человек</h3><p>Каждый успевает сказать, и никого не теряют.</p></div>
+<div class="c v s2"><span class="n">04 / Наставник</span><h3>Личный куратор</h3><p>Следит за прогрессом и подтягивает слабые места.</p></div>
+<div class="c s2"><span class="n">05 / Приложение</span><h3>Тренажёр на 10 минут</h3><p>Слова и аудирование в дороге — с умными повторениями.</p></div>
+<div class="c d s3"><span class="n">06 / Гарантия</span><h3>Вернём деньги</h3><p>Если за первые 30 дней поймёте, что не ваше, — вернём всю сумму без вопросов.</p></div>
+<div class="c s3"><span class="n">07 / Сертификат</span><h3>Диплом и подготовка к IELTS</h3><p>По окончании — подтверждение уровня и готовый план к международному экзамену.</p></div>
+</div></div></section>
+
+<section id="program" style="padding-top:20px"><div class="w">
+<div class="sh rev"><h2>Программа<br>по уровням</h2><p>Выберите уровень и посмотрите, чему вы научитесь.</p></div>
+<div class="lv rev" role="tablist" id="tabs"></div>
+<div class="lp rev" id="panel"></div></div></section>
+
+<section style="padding-top:20px"><div class="w">
+<div class="sh rev"><h2>Как это<br>устроено</h2></div>
+<div class="steps rev">
+<div class="c"><h3 style="margin-top:46px">Тест уровня</h3><p>5 минут онлайн — и мы знаем, с чего начать.</p></div>
+<div class="c"><h3 style="margin-top:46px">Подбор группы</h3><p>Ваш уровень, цель и удобное время.</p></div>
+<div class="c"><h3 style="margin-top:46px">Занятия 2–3 раза в неделю</h3><p>По 60 минут в живом эфире + тренажёр.</p></div>
+<div class="c"><h3 style="margin-top:46px">Результат</h3><p>Итоговый тест, диплом и новый уровень.</p></div></div></div></section>
+
+<section id="test" style="padding-top:20px"><div class="w"><div class="quiz rev">
+<div><span class="tag" style="color:#111">Бесплатно · 1 минута</span><h2 style="margin:20px 0 16px">Какой у вас уровень?</h2><p>Ответьте на три вопроса — подскажем, с какой группы лучше начать.</p></div>
+<div id="qz"></div></div></div></section>
+
+<section id="reviews" style="padding-top:20px"><div class="w">
+<div class="sh rev"><h2>Говорят<br>выпускники</h2><p>Реальные истории людей, которые начинали с нуля.</p></div>
+<div class="rv rev">
+<div class="c"><p style="color:var(--fg);font-size:17px;margin:0">«За четыре месяца прошла собеседование на английском и получила оффер. Раньше боялась даже ответить на вопрос».</p><div class="who"><span class="av" style="background:#D6FF3D">МК</span><div><b>Мария К.</b><small>маркетолог, A2 → B2</small></div></div></div>
+<div class="c"><p style="color:var(--fg);font-size:17px;margin:0">«Наконец-то уроки, где не скучно. Куратор сам написал, когда я пропустил неделю, — это реально мотивирует».</p><div class="who"><span class="av" style="background:#B9A8FF">ДС</span><div><b>Дмитрий С.</b><small>разработчик, B1 → B2+</small></div></div></div>
+<div class="c"><p style="color:var(--fg);font-size:17px;margin:0">«Сдала IELTS на 7.0 с первого раза. Подготовка внутри курса — это отдельный подарок».</p><div class="who"><span class="av" style="background:#FFB88A">АП</span><div><b>Анастасия П.</b><small>магистрантка, B2 → C1</small></div></div></div></div></div></section>
+
+<section id="price" style="padding-top:20px"><div class="w">
+<div class="sh rev"><h2>Тарифы</h2><p>Платите помесячно или сразу за курс со скидкой. Первый урок — бесплатно.</p></div>
+<div class="pr rev">
+<div class="c"><h3>Старт</h3><div class="price">4 900 ₽<small> / мес</small></div><ul><li>Групповые уроки 2 раза в неделю</li><li>Тренажёр в приложении</li><li>Домашние задания с проверкой</li></ul><a class="btn ghost" href="#join">Выбрать</a></div>
+<div class="c d"><span class="pop">Выбор 70% учеников</span><h3>Прогресс</h3><div class="price">7 900 ₽<small style="color:#b9b6bf"> / мес</small></div><ul><li>3 урока в неделю в мини-группе</li><li>Личный куратор</li><li>Разговорный клуб каждую неделю</li><li>Гарантия возврата 30 дней</li></ul><a class="btn acc" href="#join">Выбрать</a></div>
+<div class="c"><h3>Индивидуальный</h3><div class="price">14 900 ₽<small> / мес</small></div><ul><li>Личные уроки 1 на 1</li><li>План под вашу цель</li><li>Подготовка к IELTS / TOEFL</li><li>Гибкое расписание</li></ul><a class="btn ghost" href="#join">Выбрать</a></div></div></div></section>
+
+<section style="padding-top:20px"><div class="w" style="max-width:860px">
+<div class="sh rev"><h2>Вопросы</h2></div>
+<div class="rev">
+<details><summary>Я начинаю с нуля. Мне подойдёт?</summary><p>Да. Есть отдельные группы с уровня A1: преподаватель объясняет по-русски и постепенно переходит на английский.</p></details>
+<details><summary>Сколько времени нужно в неделю?</summary><p>Около 4–5 часов: два-три урока по часу и ежедневный тренажёр по 10 минут.</p></details>
+<details><summary>Что, если я пропущу урок?</summary><p>Все занятия записываются. Вы посмотрите запись и отработаете тему с куратором.</p></details>
+<details><summary>Как работает возврат денег?</summary><p>В течение 30 дней с начала обучения напишите куратору — вернём оплату полностью.</p></details>
+<details><summary>Нужен ли сертификат для работы?</summary><p>Диплом подтверждает уровень внутри курса. Для международного признания мы готовим к IELTS и TOEFL.</p></details></div></div></section>
+
+<section id="join" style="padding-top:20px"><div class="w"><div class="form rev">
+<div><h2>Первый урок —<br>бесплатно</h2><p style="font-size:18px;max-width:380px">Оставьте контакты, и мы запишем вас на пробное занятие в течение дня.</p></div>
+<div><form id="f"><input required placeholder="Ваше имя" aria-label="Имя"><input required type="tel" placeholder="Телефон или Telegram" aria-label="Контакт">
+<select aria-label="Цель"><option>Моя цель: общение и путешествия</option><option>Работа и карьера</option><option>IELTS / TOEFL</option><option>Переезд и учёба</option></select>
+<button class="btn" type="submit">Записаться на пробный урок →</button></form>
+<div class="ok" id="ok">Спасибо! Мы напишем вам в течение дня 🎉</div></div></div></div></section>
+</main>
+
+<footer><div class="w fg"><a class="logo" href="#top"><i></i>Lumen English</a><span>© 2026 Lumen English. Учебный проект.</span><span>hello@lumen-english.demo</span></div></footer>
+
+<script>
+(function(){
+var L={A1:{t:'Начинающий',d:'Первые шаги: знакомство, повседневные фразы, простая грамматика. Вы сможете представиться и поддержать короткий разговор.',l:['Базовая лексика на 800 слов','Диалоги в магазине, кафе, такси','Простые времена и вопросы','Чтение коротких текстов']},
+A2:{t:'Элементарный',d:'Учимся рассказывать о себе, планах и прошлом. Появляется уверенность в бытовых ситуациях и путешествиях.',l:['Рассказ о событиях и планах','Путешествия и отель','Фильмы и подкасты с субтитрами','Письма и сообщения']},
+B1:{t:'Средний',d:'Вы свободно общаетесь на знакомые темы, понимаете большинство сериалов и можете высказать мнение.',l:['Дискуссии и аргументация','Рабочая переписка и звонки','Сериалы без субтитров','Основы подготовки к IELTS']},
+B2:{t:'Выше среднего',d:'Говорите бегло и точно, понимаете носителей, готовитесь к экзамену или работе в международной команде.',l:['Презентации и переговоры','Идиомы и разговорный стиль','Академическое письмо','Полная подготовка к IELTS']},
+C1:{t:'Продвинутый',d:'Свободное владение: тонкие смыслы, профессиональные темы, уверенный нативный темп.',l:['Сложные тексты и лекции','Публичные выступления','Деловой и академический стиль','Шлифовка произношения']}};
+var tabs=document.getElementById('tabs'),panel=document.getElementById('panel');
+function show(k){[].forEach.call(tabs.children,function(b){b.setAttribute('aria-selected',b.dataset.k===k)});var o=L[k];
+panel.innerHTML='<div><span class="tag">Уровень '+k+'</span><h2 style="margin:18px 0 14px;font-size:clamp(26px,4vw,42px)">'+o.t+'</h2><p style="color:var(--muted);margin:0">'+o.d+'</p></div><ul>'+o.l.map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul>'}
+Object.keys(L).forEach(function(k){var b=document.createElement('button');b.textContent=k;b.dataset.k=k;b.setAttribute('role','tab');b.onclick=function(){show(k)};tabs.appendChild(b)});show('B1');
+
+var Q=[{q:'Выберите правильный вариант: She ___ to work every day.',o:['go','goes','going'],a:1},
+{q:'I ___ to Paris last summer.',o:['have been','was going','went'],a:2},
+{q:'If I ___ more time, I would learn another language.',o:['have','had','will have'],a:1}];
+var i=0,sc=0,qz=document.getElementById('qz');
+function ask(){if(i>=Q.length){var r=sc<=0?'A1':sc==1?'A2':sc==2?'B1':'B2';
+qz.innerHTML='<div class="res"><p>Ваш примерный уровень</p><b>'+r+'</b><p>Верных ответов: '+sc+' из '+Q.length+'. Запишитесь на бесплатный урок — преподаватель определит уровень точнее.</p><div class="cta"><a class="btn acc" href="#join">Записаться →</a><button class="btn ghost" style="color:#F6F2EA;border-color:#F6F2EA" id="rs">Пройти заново</button></div></div>';
+document.getElementById('rs').onclick=function(){i=0;sc=0;ask()};return}
+var q=Q[i];qz.innerHTML='<div class="bar"><i style="width:'+(i/Q.length*100)+'%"></i></div><b style="font-size:20px;line-height:1.4;display:block">'+q.q+'</b><div class="opt">'+q.o.map(function(x,j){return'<button data-j="'+j+'">'+x+'</button>'}).join('')+'</div>';
+[].forEach.call(qz.querySelectorAll('.opt button'),function(b){b.onclick=function(){if(+b.dataset.j===q.a)sc++;i++;ask()}})}
+ask();
+
+document.getElementById('f').onsubmit=function(e){e.preventDefault();this.style.display='none';document.getElementById('ok').style.display='block'};
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+[].forEach.call(document.querySelectorAll('.rev'),function(n){io.observe(n)});
+})();
+</script>
+</body>
+</html>
